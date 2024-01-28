@@ -1,0 +1,305 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[letterpaper,margin=1in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{academicons}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{sectsty}
+
+% Head
+\setlist{noitemsep,topsep=0pt,leftmargin=*}
+
+\pagestyle{fancy}
+\fancyhead[C]{Joseph E. Hand}
+\renewcommand{\headrulewidth}{0pt}
+
+\hypersetup{colorlinks=true,urlcolor=Blue,linktocpage}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand{\institute}[1]{\renewcommand{\ginstitute}{#1}}
+\newcommand{\ginstitute}{institute}
+
+\newcommand{\location}[1]{\renewcommand{\glocation}{#1}}
+\newcommand{\glocation}{location}
+
+\renewcommand{\description}[1]{\renewcommand{\gdescription}{#1}}
+\newcommand{\gdescription}{description}
+
+\renewcommand{\time}[1]{\renewcommand{\gtime}{#1}}
+\newcommand{\gtime}{time}
+
+\newcommand{\itemtitle}{
+	\medskip
+	\textbf{\ginstitute} -- \glocation\hfill\gtime\\
+	\textit{\gdescription}
+	\smallskip
+}
+
+\allsectionsfont{\sffamily\sectionrule{0pt}{0pt}{-1ex}{1pt}}\vspace{-1ex}
+
+\newcommand{\contactinfo}[3]{
+    #1\hspace{6pt}\href{#2}{#3}\hspace{6pt}
+}
+
+\newenvironment{entry}[4]{
+  \medskip
+  \begin{minipage}[t]{0.75in}
+    #3
+  \end{minipage}
+  \begin{minipage}[t]{\dimexpr\textwidth-0.75in}
+    #1, \textit{#2}
+
+    \textbf{#4}
+    
+    \smallskip
+}{
+  \end{minipage}
+}
+
+% Document
+\begin{document}
+
+\setlength{\parindent}{0pt}
+
+\thispagestyle{plain}
+
+{\LARGE\textbf{Joseph E. Hand} $\vert$} Undergraduate Physics and Astronomy Student\bigskip
+
+\begin{minipage}{\dimexpr\textwidth/3}
+  Malott Hall, Room 1082\\
+  1251 Wescoe Hall Dr.\\
+  Lawrence, KS 66045
+\end{minipage}
+\begin{minipage}{\dimexpr\textwidth/3}
+  \contactinfo{\faEnvelope}{mailto:jehand@ku.edu}{jehand@ku.edu}\\
+  \contactinfo{\faGlobe}{https://josephhand.us}{josephhand.us}\\
+\end{minipage}
+\begin{minipage}{\dimexpr\textwidth/3}
+  \contactinfo{\faGithub}{https://github.com/josephhand}{josephhand}\\
+  \contactinfo{\aiOrcid}{https://orcid.org/0009-0004-9078-5987}{0009-0004-9078-5987}\\
+\end{minipage}
+\medskip
+
+
+
+% \begin{center}
+%   {\LARGE\textbf{Joseph E. Hand}}\bigskip
+%
+%   \contactinfo{\faEnvelope}{mailto:jehand@ku.edu}{jehand@ku.edu}
+%   \contactinfo{\faGlobe}{https://josephhand.us}{josephhand.us}
+%   \contactinfo{\faGithub}{https://github.com/josephhand}{josephhand}
+%   \contactinfo{\aiOrcid}{https://orcid.org/0009-0004-9078-5987}{0009-0004-9078-5987}
+% \end{center}
+
+\newenvironment{education}[4]{
+  \medskip
+  \begin{minipage}[t]{0.75in}
+    #3
+  \end{minipage}
+  \begin{minipage}[t]{\dimexpr\textwidth-0.75in}
+    \textbf{#1}, \textit{#2}
+
+    #4
+    
+    \smallskip
+}{
+  \end{minipage}
+}
+
+\vspace{-3ex}
+\section*{Education}\vspace{-1ex}\vspace{-1ex}
+
+\begin{education}{University of Kansas}{Lawrence, Kansas}{8/2021 -\\ 5/2025}{Bachelor of Science}
+  \begin{itemize}
+    \item Majors: Physics, Astronomy
+    \item Minor: Philosophy
+    \item GPA: 4.00
+  \end{itemize}
+\end{education}
+
+%\begin{education}{Johnson County Community College}{Overland Park, Kansas}{9/2020 -\\ 5/2021}{Enrolled during highschool}
+%  \begin{itemize}
+%    \item GPA: 4.00
+%    \item President's List
+%  \end{itemize}
+%\end{education}
+
+%\begin{education}{Bellevue College}{Bellevue, Washington}{9/2019 -\\ 6/2020}{Enrolled during highschool}
+%  \begin{itemize}
+%    \item GPA: 4.00
+%  \end{itemize}
+%\end{education}
+
+\section*{Honors and Awards}\vspace{-1ex}
+
+\newcommand{\award}[3]{
+  \begin{minipage}[t]{0.75in}
+    \textbf{#1}
+  \end{minipage}
+  \begin{minipage}[t]{\dimexpr\textwidth-0.75in}
+    #2\hfill#3
+  \end{minipage}
+}
+
+\award{2023}{Nominated by the University of Kansas for the 2024 Goldwater Scholarship}{}
+\award{2023}{Inducted into Sigma Pi Sigma, the physics honor society}{}
+\award{2022}{Inducted into Phi Kappa Phi, an inter-disciplinary honor society}{}
+\award{2022}{Accepted into the University of Kansas' Honors Program}{}
+\award{2021}{Awarded KU Chancellor Merit Scholarship}{\$20,000}
+
+\section*{Research Experience}\vspace{-1ex}
+
+\begin{entry}{University of Kansas}{Lawrence, Kansas}{6/2022 -\\ Present}{Undergraduate Research Assistant in Astronomy}
+  Work with Dr. Crossfield on an independent research project to measure the
+  chemical compositions of stars from spectra taken using the HARPS
+  spectrograph.
+  \begin{itemize}
+    \item Utilize machine learning tool \texttt{The Cannon}
+    \item Access public spectra from \textit{HARPS} instrument using
+      \texttt{pyvo} library
+    \item Apply spectral processing techniques such as continuum normalization
+    \item Convey results effectively to other members of the research team
+  \end{itemize}
+\end{entry}
+
+\begin{entry}{University of California}{Berkeley, California}{6/2023 -\\ 8/2023}{REU Intern at the Berkeley SETI Research Center}
+  Participate in a 10-week internship at the Berkeley SETI Research center where I worked with Howard Isaacson and Dr. James Davenport.
+  \begin{itemize}
+    \item Design software tools to identify potential signs of intelligent
+      life in APOGEE data
+    \item Select promising astronomical targets to facilitate analysis
+    \item Communicate my results to others in the field
+  \end{itemize}
+\end{entry}
+
+\section*{Publications}\vspace{-1ex}
+
+\newcommand{\publication}[6]{
+  \medskip
+  \begin{minipage}[t]{0.75in}
+    #3
+  \end{minipage}
+  \begin{minipage}[t]{\dimexpr\textwidth-0.75in}
+    \textbf{#4},#5\\
+    #1, \href{#6}{\textit{#2}}
+  \end{minipage}  
+
+}
+
+\publication
+{Neda Hejazi, Ian J. M. Crossfield, Thomas Nordlander, Megan Mansfield, Diogo Souto, Emilio Marfil, David R. Coria, Jonathan Brande, Alex S. Polanski, \textbf{Joseph E. Hand}, and Kate F. Wienke}
+{Elemental Abundances of the Super-Neptune WASP-107b's Host Star Using High-resolution, Near-infrared Spectroscopy}
+{6/2023}{The Astrophysical Journal}{ Volume 949, Issue 2, id.79, 15 pp.}
+{https://ui.adsabs.harvard.edu/abs/2023ApJ...949...79H/abstract}
+
+\section*{Proposals}\vspace{-1ex}
+
+\newcommand{\proposal}[5]{
+  \medskip
+  \begin{minipage}[t]{0.75in}
+    #3
+  \end{minipage}
+  \begin{minipage}[t]{\dimexpr\textwidth-0.75in}
+    \textbf{#4}\hfill \textit{#5}\\
+    #1, \textit{#2}
+  \end{minipage}
+
+}
+
+\proposal{Daniel Huber, Tim Bedding, Ian Crossfield, \textbf{Joseph Hand}, Ben Montet, Alex Polanski}{Homogeneous High-Resolution Spectroscopy of TESS Exoplanet Host Stars}{9/2023}{ESO, HARPS}{Accepted 1/2024, 5 nights}
+
+\section*{Leadership Experience}\vspace{-1ex}
+
+\begin{entry}{University of Kansas}{Lawrence, Kansas}{8/2023 -\\ Present}{KU SPS Magazine Chief Editor}
+  Elected by the KU Society of Physics Students to lead the club's
+  semesterly magazine.
+\end{entry}
+
+\begin{entry}{University of Kansas}{Lawrence, Kansas}{9/2022 -\\ 12/2022}{Undergraduate Teaching Assistant}  
+  Helped Dr. Judy Wu with teaching College Physics II (PHSX 115).
+  \begin{itemize}
+    \item Assisted with routine class activities (e.g. answering questions in class)
+    \item Hosted office hours to answer questions and solve practice problems
+  \end{itemize}
+\end{entry}
+
+\begin{entry}{University of Kansas}{Lawrence, Kansas}{8/2022 -\\ 5/2023}{Undergraduate Student Department Representative}
+  Volunteer to attend department meetings and participate in discussion of
+  departmental matters.
+  \begin{itemize}
+    \item Selected elective classes to be offered in future semesters
+    \item Created curriculum map to organize subjects taught in the department
+  \end{itemize}  
+\end{entry}
+
+\section*{Outreach}\vspace{-1ex}
+
+\begin{entry}{University of Kansas}{Lawrence, Kansas}{4/2023}{Public Telescope Night Volunteer}
+  Volunteer to help the department host public telescope nights to let the
+  public view objects in the night sky through telescopes.
+  \begin{itemize}
+    \item Assist members of the public view astronomical objects
+    \item Described astrophysical phenomena and instrumentation to the public
+  \end{itemize}
+\end{entry}
+
+\begin{entry}{University of Kansas}{Lawrence, Kansas}{11/2022}{KU Carnival of Chemistry Volunteer}
+  Volunteer at the Carnival of chemistry.
+  \begin{itemize}
+    \item Operate physics demonstrations
+    \item Explain concepts in physics to children of ages 5 and above
+  \end{itemize}
+\end{entry}
+
+\section*{Contributed Talks}\vspace{-1ex}
+
+\newcommand{\talk}[4]{
+  \medskip
+  \begin{minipage}[t]{0.75in}
+    #3
+  \end{minipage}
+  \begin{minipage}[t]{\dimexpr\textwidth-0.75in}
+    \textbf{#1}, \textit{#2}\\
+    #4
+  \end{minipage}  
+}
+
+\talk{243rd AAS Meeting}{New Orleans, Louisiana}{1/2024}{Identifying Potential Technosignatures in APOGEE Data Using ALIAS}
+
+\talk{MARAC 2023}{Atchinson, Kansas}{11/2023}{Identifying Potential Technosignatures in APOGEE Data Using ALIAS}
+
+\talk{KU Astronomy Seminar}{Lawrence, Kansas}{9/2023}{Identifying Potential Technosignatures in APOGEE Data Using ALIAS}
+
+\talk{PALOOZA 2023}{Lawrence, Kansas}{3/2023}{HARPSpec: Using Machine Learning to Find Chemical Compositions of Stars from Their Spectra}
+
+\talk{KU Astronomy Seminar}{Lawrence, Kansas}{3/2023}{HARPSpec: Using Machine Learning to Find Chemical Compositions of Stars from Their Spectra}
+
+\talk{KU Undergraduate Research Symposium}{Lawrence, Kansas}{8/2022}{HARPSpec: Using The Cannon to Derive Stellar Parameters from Spectra}
+
+
+\newcommand{\skills}[2]{
+  \begin{minipage}[t]{2in}
+    \textbf{#1}
+  \end{minipage}
+  \begin{minipage}[t]{\dimexpr\textwidth-2in}
+    #2
+  \end{minipage}  
+}
+
+\section*{Skills}\vspace{-1ex}
+
+
+\skills{Document Creation}{LaTeX, BibTeX, Beamer, ReStructured Text, Markdown}
+\skills{Programming}{Python, Java, Bash, GLSL/OpenCL}
+\skills{Astronomy and Python}{\texttt{numpy}, \texttt{matplotlib}, \texttt{astropy}, \texttt{scipy}, \texttt{TheCannon}}
+\skills{Computer Infrastructure}{Linux, \texttt{ssh}, \texttt{git}, Docker, computer networking}
+
+\end{document}
